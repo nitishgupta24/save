@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <link rel="stylesheet" href="./assets/styles/login.css">
+    <!-- <script src="./assets/scripts/login.js"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+    <!--page1-->
+    <div class="first" style="width: 30%;">
+
+        <div class="wrapper">
+            <div class="page1_class1" id="page1_id1"
+                style="background:none;border:2px solid gray;border-radius: 20px;width: 250px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+                <h1>Login Form</h1>
+                <br>
+                <form id="form" name="myForm" method="POST">
+                    <!-- name  -->
+                    <input type="text" id="username" placeholder="Name" name="name"
+                        style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br>
+                    <br>
+                    <!-- email  -->
+                    <input type="text" id="Email" placeholder="Email" name="email"
+                        style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br>
+                    <br>
+                    <!-- number  -->
+                    <input type="number" id="phone" placeholder="Number" name="phone"
+                        style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" /><br>
+                    <br>
+                    <!-- password  -->
+                    <input type="password" id="password" placeholder="Password" name="password"
+                        style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;font-weight:bold;" />
+                    <br><br><br>
+
+                    <!--web  -->
+                    <button style="float: left; padding-top: 1px;padding-right: 10px; font-size: 0.9em;font-weight:bold; " > <a href="./assets/home.html" style="text-decoration: none; color: black;">MyWebsite</a></button>
+                    <!-- datasave -->
+                   <input type="submit"name="submit" value="login"style="float: right; padding-top: 1px;padding-bottom: 1px; padding-left: 9px;padding-right: 10px; font-size: 0.9em;font-weight:bold; ">
+                    </a>
+                       
+                </form>
+                <br>
+            </div>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbypiN93yMhgS97xx11_A1EZ3RW_GywXMt030H0EQcKjWisDGiExdh1SHPUA6csOOd1z/exec'
+    const form = document.forms['myForm']
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</html>

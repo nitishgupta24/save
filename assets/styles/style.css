@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black : #000;
+    --white : #fff;
+    --gray-green : #679389;
+    --light-gray : #949494;
+    --green : #3c8f7c;
+    --dark-green : #04a92a;
+
+    --thin : 100;
+    --light : 300;
+    --rgl : 400;
+    --md : 500;
+    --bold : 700;
+    --black-size : 900;
+
+    --content-pd : 15px 30px; 
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    color: var(--dark-green);
+}
+
+h2 {
+    font-weight: var(--black-size);
+    font-size: 2.5rem;
+}
+
+p {
+    color: var(--light-gray);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--content-pd);
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.logo {
+    width: 120px;
+    margin-top: -20px;
+}
+
+.menu-button, .close-button {
+    display: none;
+    position: relative;
+    z-index: 101;
+}
+
+.slider{
+    width: 50%;
+    height: 100%;
+    display: inline;
+    margin-bottom: 50%;
+}
+.close-button {
+    color: var(--white);
+}
+
+nav {
+    width: 40%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-weight: var(--bold);
+}
+
+nav .login-button {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    font-weight: var(--black-size);
+}
+
+nav .login-button:hover {
+    color: #eaeaea;
+}
+
+.float {
+    background-color: var(--white);
+    box-shadow: 0px 1px 10px #999;
+}
+
+main {
+    margin-left: 0px;
+    margin-top: -80px;
+}
+
+.jumbotron {
+    background-image: url('../image/hero.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    height: 100vh;
+    padding: var(--content-pd);
+}
+
+.jumbotron h2 {
+    margin: 100px 0 5px 0;
+}
+
+.jumbotron p {
+    font-size: 1.3rem;
+}
+
+.jumbotron .buttons {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.jumbotron button, .jumbotron a.link-about {
+    border: none;
+    background-color: var(--green);
+    padding: 10px 25px;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: var(--bold);
+    border-radius: 3px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.jumbotron button:hover, .jumbotron a.link-about:hover {
+    color: #eaeaea;
+}
+
+.jumbotron .dropdown {
+    position: relative;
+}
+
+.jumbotron .dropdown-btn {
+    width: 192px;
+}
+
+.jumbotron .dropdown-list {
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 192px;
+    display: none;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.jumbotron .dropdown-list a {
+    color: var(--black);
+    font-weight: var(--rgl);
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px 25px;
+    display: block;
+}
+
+.jumbotron .active {
+    display: block;
+}
+
+.jumbotron .dropdown-list a:hover {
+    background-color: #ddd;
+}
+
+.jumbotron .buttons p {
+    font-size: .9rem;
+    margin: 0 15px;
+    font-weight: var(--md); 
+}
+
+#home, #about {
+    height: 100vh;
+    padding: var(--content-pd);
+}
+
+#home h2, #about h2, #contact h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 70px;
+}
+
+#home section {
+    display: flex;
+    margin-top: 30px;
+    width: 85%;
+}
+
+#home img {
+    width: 700px;
+    margin-right: 50px;}
+    
+#home p {
+    font-size: 1.3rem;
+    margin-top: -7pxpx;
+}
+
+#about section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    text-align: center;
+}
+
+#about .step {
+    width: 23%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px 30px 90px;
+    border-radius: 3px;
+    position: relative;
+}
+
+#about .step i {
+    font-size: 75px;
+}
+
+#about .step h3 {
+    font-size: 1.4rem;
+    margin: 10px 0 15px 0;
+}
+
+#about .step::before {
+    content: "01";
+    padding: 15px;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 35px;
+    font-weight: var(--bold);
+    border-radius: 3px;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+}
+
+#about .step:nth-child(2)::before {
+    content: "02";
+}
+
+#about .step:nth-child(3)::before {
+    content: "03";
+}
+
+#contact {
+    max-height: 100vh;
+    padding: var(--content-pd);
+}
+
+#contact h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 196px;
+    width: auto;
+    height: auto;
+    margin-left: 512px
+}
+aside {
+    display: -webkit-inline-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+aside img {
+    width: 328px;
+}
+
+.telp, .instagram, .email, .tinggal {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.telp i, .instagram i, .tinggal i, .email i {
+    margin-right: 23px;
+    font-size: 24px;
+    line-height: 18px;
+}
+
+.email i {
+    margin-bottom: 6;
+    margin-bottom: 3%;
+}
+
+#contact .bx, #contact .email i {
+    font-size: 32px;
+}
+
+#contact .email i {
+    margin-right: -8.5px;
+}
+
+aside .email, aside .telp, aside .tinggal {
+    margin-bottom: 20px;
+}
+
+aside h3 {
+    font-size: 1.3rem;
+    font-weight: var(--black-size);
+    margin-bottom: 30px;
+}
+
+aside section {
+    padding: 75px;
+}
+
+footer {
+    background-color: var(--green);
+    color: var(--white);
+    text-align: center;
+    padding: 40px;
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 1279px){
+    body {
+        width: fit-content;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: 101;
+        width: 100%;
+        height: 40%;
+        align-items: center;
+    }
+
+    nav a {
+        color: var(--white);
+    }
+
+    .hamburger-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color:rgba(26, 62, 54, 0.9);
+        z-index: 100;
+        display: none;
+        align-items: center;
+        transform: translateX(100%);
+    }
+
+    .menu-button, .close-button {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .menu-button {
+        display: inherit;
+    }
+
+    nav {
+        width: fit-content;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .jumbotron {
+        background-size: 200%;
+    }
+
+    .jumbotron button, .jumbotron a.link-about {
+        font-size: 14px;
+    }
+
+    .jumbotron .dropdown-btn, .jumbotron .dropdown-list {
+        width: 160px;
+    }
+
+    #home section {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home img {
+        height: 400px;
+        width: 400px;
+        margin-right: 0;
+    }
+    #about section {
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 40px;
+        gap: 40px;
+    }
+
+    #about .step {
+        width: 80%;
+    }
+
+    #contact h2 {
+        margin-top: 70px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin:auto;
+    }
+    aside {
+        width: 90%;
+        height: 250px;
+        margin-top: 40px;
+    }
+
+    aside section {
+        padding: 30px;
+    }
+
+    aside img {
+        width: 200px;
+        height: 250px;
+    }
+
+    aside h3 {
+        font-size: 1.2rem;
+    }
+
+    #home, #about {
+        height: auto;
+    }
+    
+    aside section {
+    padding-right: 71px;
+    }
+    .donate2 p{
+        display: block;
+        position: absolute;
+        right: 4%;
+        top: 3%;
+        color: #060606;
+    } 
+}
+.donate2 p{
+    display: block;
+    position: absolute;
+    right: 4%;
+    top: 440%;
+    left: 0%;
+    color: #060606;
+} 
+@media screen and (min-width: 767px) and (max-width: 1279px) {
+    h {
+        font-size: 20px;
+    }
+
+    .jumbotron p {
+        font-size: 1.5rem;
+    }
+
+    .jumbotron button, .jumbotron a.link-about {
+        font-size: 18px;
+    } 
+
+    .jumbotron .dropdown-btn, .jumbotron .dropdown-list {
+        width: 192px;
+    }
+    
+    
+}
+
+
+@keyframes slideLeft{
+    to {
+        transform: translateX(0);    
+    }
+}
